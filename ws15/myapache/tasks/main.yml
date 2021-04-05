@@ -1,0 +1,17 @@
+---
+# tasks file for myapache
+- name: "Installing httpd server !!" 
+  yum:
+          name: "httpd"
+          state: present
+
+- name: "Copying the files "
+  template:
+          src: "index.html"
+          dest: "/var/www/html"
+
+- name: "Starting httpd server !"
+  service:
+          name: "httpd"
+          state: "restarted"
+

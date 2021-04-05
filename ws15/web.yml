@@ -1,0 +1,9 @@
+- name: "Installing apache webserver on the slave node"
+  hosts: proxy
+  roles:
+          - "myapache"
+
+- name: "Configuring HAproxy Load Balancer"
+  hosts: proxy
+  roles:
+          - "myloadbalancer"
